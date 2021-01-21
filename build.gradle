@@ -32,16 +32,11 @@ test {
 dependencies {
 
 
+    testCompile 'junit:junit:4.12'
     implementation 'junit:junit:4.12'
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 
-
-    //JUnit 5
-    compile('org.junit.jupiter:junit-jupiter-params:5.0.0')
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.7.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.0")
 
    //lombok
     implementation('org.projectlombok:lombok')
