@@ -16,7 +16,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'Springboot-aws-project'
+group 'Springboot-aws-com.springboot.aws.project'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -25,11 +25,25 @@ repositories {
     jcenter()
 }
 
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
 
 
-    compile('org.springframework.boot:spring-boot-starter-web')
+    implementation 'junit:junit:4.12'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 
+
+    //JUnit 5
+    compile('org.junit.jupiter:junit-jupiter-params:5.0.0')
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher:1.7.0")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.0")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.7.0")
+
+   //lombok
     implementation('org.projectlombok:lombok')
     annotationProcessor('org.projectlombok:lombok')
     testImplementation('org.projectlombok:lombok')
@@ -44,7 +58,7 @@ dependencies {
     compile('org.springframework.session:spring-session-jdbc')
     implementation('org.springframework.session:spring-session-jdbc') // 권한 관련
 
-    implementation 'junit:junit:4.12'
+
 
     testCompile('org.springframework.security:spring-security-test')
 
@@ -52,11 +66,6 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
 
-    //JUnit 5
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
 }
 
-test {
-    useJUnitPlatform()
-}

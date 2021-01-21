@@ -3,3 +3,5 @@
 .idea
 
 application-oauth.properties
+.generated
+.generated_tests
