@@ -3,5 +3,8 @@
 .idea
 
 application-oauth.properties
+application-real.properties
+.travis.yml
+
 .generated
 .generated_tests
